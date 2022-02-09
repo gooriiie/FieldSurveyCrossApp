@@ -1,47 +1,26 @@
 import React, { useState } from 'react';
-import {
-    View,
-    Text,
-    TextInput,
-    StyleSheet,
-} from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import SolidOrangeButton from "./SolidOrangeButton";
 
-export default function Signup3({ route, navigation } : any) {
-    const {email, password} = route.params;
-    const [name, useName] = useState('');
+export default function Signup5({ route, navigation } : any) {
 
     return (
         <View style={styles.container}>
             <View style={styles.titleArea}>
-                <Text style={styles.title}>이름을 입력해주세요</Text>
+                <Text style={styles.title}>회원가입이 완료되었습니다!</Text>
                 <Text style={styles.subtitle}>
-                    본인 이름을 입력해주세요
+                    로그인 후 사용하시면 됩니다
                 </Text>
             </View>
             <View style={styles.inputArea}>
-                <TextInput
-                    style={styles.inputBox}
-                    // value={this.state.password}
-                    placeholder="이름을 입력해주세요"
-                    onChangeText={(name) => useName(name)}
-                    autoCapitalize="none"
-                    keyboardType="name-phone-pad"
-                />
+                
             </View>
             <View style={styles.buttonArea}>
                 <SolidOrangeButton
                     buttonColor="#FF7800"
                     textColor="#FFFFFF"
-                    text="다음으로"
-                    onPress={() => navigation.navigate(
-                        "Signup4",
-                        {
-                            email: email,
-                            password: password,
-                            name: name
-                        }
-                    )}
+                    text="로그인 하러가기"
+                    // onPress={() => navigation.navigate("Signup3")}
                 />
             </View>
         </View>

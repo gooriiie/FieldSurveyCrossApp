@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -7,7 +7,10 @@ import {
 } from "react-native";
 import SolidOrangeButton from "./SolidOrangeButton";
 
-export default function Signup4({ navigation } : any) {
+export default function Signup4({ route, navigation } : any) {
+    const {email, password, name} = route.params;
+    const [phoneNumber, usePhoneNumber] = useState('');
+
     return (
         <View style={styles.container}>
             <View style={styles.titleArea}>
@@ -21,9 +24,9 @@ export default function Signup4({ navigation } : any) {
                     style={styles.inputBox}
                     // value={this.state.password}
                     placeholder="휴대폰번호를 입력해주세요"
-                    // onChangeText={(password) => this.setState({ password })}
+                    onChangeText={(phoneNumber) => usePhoneNumber(phoneNumber)}
                     autoCapitalize="none"
-                    keyboardType="name-phone-pad"
+                    keyboardType="number-pad"
                 />
             </View>
             <View style={styles.buttonArea}>
@@ -31,7 +34,7 @@ export default function Signup4({ navigation } : any) {
                     buttonColor="#FF7800"
                     textColor="#FFFFFF"
                     text="인증하기"
-                    onPress={() => navigation.navigate("Signup4")}
+                    onPress={() => navigation.navigate("Signup5")}
                 />
             </View>
         </View>

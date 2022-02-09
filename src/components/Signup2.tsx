@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     View,
     Text,
@@ -7,7 +7,10 @@ import {
 } from "react-native";
 import SolidOrangeButton from "./SolidOrangeButton";
 
-export default function Signup2({ navigation } : any) {
+export default function Signup2({ route, navigation } : any) {
+    const {email} = route.params;
+    const [password, usePassword] = useState('');
+
     return (
         <View style={styles.container}>
             <View style={styles.titleArea}>
@@ -21,7 +24,7 @@ export default function Signup2({ navigation } : any) {
                     style={styles.inputBox}
                     // value={this.state.password}
                     placeholder="비밀번호를 입력해주세요"
-                    // onChangeText={(password) => this.setState({ password })}
+                    onChangeText={(password) => usePassword(password)}
                     autoCapitalize="none"
                     keyboardType="visible-password"
                 />
@@ -31,7 +34,13 @@ export default function Signup2({ navigation } : any) {
                     buttonColor="#FF7800"
                     textColor="#FFFFFF"
                     text="다음으로"
-                    onPress={() => navigation.navigate("Signup4")}
+                    onPress={() => navigation.navigate(
+                        "Signup3",
+                        {
+                            email: email,
+                            password: password
+                        }
+                    )}
                 />
             </View>
         </View>
