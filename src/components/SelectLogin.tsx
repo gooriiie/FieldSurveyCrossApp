@@ -1,6 +1,5 @@
 import "react-native-gesture-handler";
-import { NavigationRouteContext, useNavigation } from "@react-navigation/native";
-import React, { Component } from "react";
+import React from "react";
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -13,9 +12,7 @@ export default function SelectLogin( { navigation } : any) {
         <View style={styles.buttonArea}>
           <TouchableOpacity
             style={styles.loginButton}
-            // onPress={() => 
-            //   navigation.navigate('Signup')
-            // }
+            onPress={() => navigation.navigate('EmailLogin')}
           >
             <Icon name="mail" size={20} color="#BABABA" />
             <Text style={styles.loginText}>이메일로 로그인하기</Text>

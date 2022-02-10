@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Login from "./src/components/Login";
+import Login from "./src/components/EmailLogin";
 import Signup from "./src/components/Signup";
 import Signup2 from "./src/components/Signup2";
 import Signup3 from "./src/components/Signup3";
@@ -19,53 +19,51 @@ import SelectLogin from "./src/components/SelectLogin";
 
 const Stack = createStackNavigator();
 
+function Auth() {
+    return (
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen
+            name="SelectLogin"
+            component={SelectLogin}
+          />
+          <Stack.Screen
+            name="Signup"
+            component={Signup}
+          />
+          <Stack.Screen
+            name="Signup2"
+            component={Signup2}
+          />
+          <Stack.Screen
+            name="Signup3"
+            component={Signup3}
+          />
+          <Stack.Screen
+            name="Signup4"
+            component={Signup4}
+          />
+          <Stack.Screen
+            name="Signup5"
+            component={Signup5}
+          />
+          <Stack.Screen
+            name="EmailLogin"
+            component={Login}
+          />
+      </Stack.Navigator>
+    )
+}
+
 export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="SelectLogin"
-            component={SelectLogin}
+            name="Auth"
+            component={Auth}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="Signup"
-            component={Signup}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Signup2"
-            component={Signup2}
-            options={{ 
-              headerShown: false
-            }}
-          />
-          <Stack.Screen
-            name="Signup3"
-            component={Signup3}
-            options={{ 
-              headerShown: false
-            }}
-          />
-          <Stack.Screen
-            name="Signup4"
-            component={Signup4}
-            options={{ 
-              headerShown: false
-            }}
-          />
-          <Stack.Screen
-            name="Signup5"
-            component={Signup5}
-            options={{ 
-              headerShown: false
-            }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{ headerShown: false }}
-          />
+          
         </Stack.Navigator>
       </NavigationContainer>
     );

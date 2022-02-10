@@ -3,7 +3,6 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import SolidOrangeButton from "./SolidOrangeButton";
 
 export default function Signup5({ route, navigation } : any) {
-
     return (
         <View style={styles.container}>
             <View style={styles.titleArea}>
@@ -20,7 +19,7 @@ export default function Signup5({ route, navigation } : any) {
                     buttonColor="#FF7800"
                     textColor="#FFFFFF"
                     text="로그인 하러가기"
-                    // onPress={() => navigation.navigate("Signup3")}
+                    onPress={() => navigation.navigate("SelectLogin")}
                 />
             </View>
         </View>
