@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function SolidOrangeButton(props: any) {
+export default function SolidCircleButton(props: any) {
     return (
         <TouchableOpacity
             style={[
@@ -17,15 +17,17 @@ export default function SolidOrangeButton(props: any) {
         </TouchableOpacity>
     );
 };
+
 const styles = StyleSheet.create({
     button: {
-        borderRadius: 8,
-        width: "100%",
+        borderRadius: 100,
+        width: 50,
         height: 50,
-        justifyContent: "center",
+        justifyContent: 'center',
         alignItems: "center"
     },
     text: {
-        fontSize: 14
+        fontSize: 20,
+        fontWeight: 'bold',
     }
 });

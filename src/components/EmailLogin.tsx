@@ -5,7 +5,7 @@ import {
     TextInput,
     View,
 } from "react-native";
-import SolidOrangeButton from "./SolidOrangeButton";
+import SolidButton from "./SolidButton";
 
 export default function EmailLogin({ navigation }: any) {
     const [email, useEmail] = useState("");
@@ -32,12 +32,12 @@ export default function EmailLogin({ navigation }: any) {
                 />
             </View>
             <View style={styles.buttonArea}>
-                <SolidOrangeButton
+                <SolidButton
                     buttonColor="#FF7800"
                     textColor="#FFFFFF"
                     text="로그인"
                     onPress={() =>
-                        navigation.navigate()
+                        navigation.navigate('Main')
                     }
                 />
             </View>
@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     titleArea: {
-        flex: 1,
+        flex: 2,
         alignItems: "center",
         justifyContent: "center",
     },
     title: {
-        marginTop: "20%",
+        marginTop: '10%',
         fontSize: 50,
         fontWeight: "bold",
     },

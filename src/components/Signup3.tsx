@@ -5,7 +5,7 @@ import {
     TextInput,
     StyleSheet,
 } from "react-native";
-import SolidOrangeButton from "./SolidOrangeButton";
+import SolidButton from "./SolidButton";
 
 export default function Signup3({ route, navigation } : any) {
     const {email, password} = route.params;
@@ -30,7 +30,7 @@ export default function Signup3({ route, navigation } : any) {
                 />
             </View>
             <View style={styles.buttonArea}>
-                <SolidOrangeButton
+                <SolidButton
                     buttonColor="#FF7800"
                     textColor="#FFFFFF"
                     text="다음으로"
