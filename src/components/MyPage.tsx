@@ -1,29 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import SolidCircleButton from "./SolidCircleButton";
 
 const Stack = createStackNavigator();
 
-export default function ProjectList({ navigation } : any) {
+export default function MyPage({ navigation } : any) {
     return (
         <View style={styles.container}>
             <View style={styles.titleArea}>
-                <Text style={styles.title}>프로젝트 목록</Text>
-                <SolidCircleButton
-                    style={styles.button}
-                    buttonColor="#FF7800"
-                    textColor="#FFFFFF"
-                    text="+"
-                    onPress={() => navigation.navigate('AddProject1')}
-                />
+                <Text style={styles.title}>회원정보</Text>
             </View>
-            <View style={styles.searchArea}>
-
-            </View>
-            <View style={styles.listArea}>
-                {/* FlatList 추가 */}
-            </View>
+            <View style={styles.searchArea}></View>
+            <View style={styles.listArea}></View>
         </View>
     );
 }
@@ -36,11 +24,10 @@ const styles = StyleSheet.create({
         paddingRight: 30,
     },
     titleArea: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: '10%'
+        justifyContent: 'space-between'
     },
     title: {
         fontSize: 30,
@@ -53,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     listArea: {
-        flex: 8,
+        flex: 7,
         alignItems: 'center'
     }
 });

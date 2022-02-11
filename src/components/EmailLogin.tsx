@@ -37,7 +37,7 @@ export default function EmailLogin({ navigation }: any) {
                     textColor="#FFFFFF"
                     text="로그인"
                     onPress={() =>
-                        navigation.navigate('Main')
+                        navigation.reset({routes: [{name: 'Main'}]})
                     }
                 />
             </View>

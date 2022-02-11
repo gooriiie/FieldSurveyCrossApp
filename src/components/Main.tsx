@@ -1,16 +1,43 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
-import ProjectList from "./ProjectList";
+import Project from "./Project";
+import MyPage from "./MyPage";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
 export default function Main() {
     return (
-        <Tab.Navigator screenOptions={{ headerShown: false}}>
-            <Tab.Screen name="ProjectList" component={ProjectList} />
-            {/* <Tab.Screen name='MyPage' component={MyPage}/> */}
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
+            <Tab.Screen
+                name="Project"
+                component={Project}
+                options={{
+                    tabBarLabel: "목록",
+                    tabBarIcon: ({ focused }) => (
+                        <MaterialIcons
+                            name="list-alt"
+                            size={30}
+                            style={{ color: focused ? "#FF7800" : "#B3B3B3" }}
+                        />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="MyPage"
+                component={MyPage}
+                options={{
+                    tabBarLabel: "마이페이지",
+                    tabBarIcon: ({ focused }) => (
+                        <MaterialIcons
+                            name="person-outline"
+                            size={30}
+                            style={{ color : focused ? "#FF7800" : "#B3B3B3" }}
+                        />
+                    ),
+                }}
+            />
         </Tab.Navigator>
     );
 }
