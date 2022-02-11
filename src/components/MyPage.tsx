@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
         paddingRight: 30,
     },
     titleArea: {
-        flex: 2,
+        flex: 1,
         alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        marginTop: '10%'
     },
     title: {
         fontSize: 30,
