@@ -67,8 +67,7 @@ export default function AddProject2({ navigation }: any) {
                     }
                     data={spaceData}
                     renderItem={renderSpace}
-                    keyExtractor={(space) => space.name}
-                    style={styles.flatlist}
+                    keyExtractor={(space) => space.id}
                     numColumns={4}
                     columnWrapperStyle={styles.row}
                 />
@@ -113,7 +112,4 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "flex-end",
     },
-    flatlist: {
-        margin: 0,
-    }
 });
