@@ -1,12 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Alert } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
-export default function renderSpace({ item, navigation }: any) {
+
+export default function RenderSpace({ item, navigation }: any) {
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                onPress={() => console.log(item.id)}
+                onPress={() => navigation.navigate(
+                    "AddProject3",
+                    {
+                        id: item.id
+                    }
+                )}
             >
                 <View style={styles.outerView}>
                     <Image
@@ -35,11 +42,11 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     innerView: {
-        width: 70
+        width: 90
     },
     tinyImage: {
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
         borderRadius: 10,
         marginBottom: 10,
     },

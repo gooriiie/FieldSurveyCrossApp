@@ -5,48 +5,8 @@ import {
     TextInput,
     TouchableOpacity,
 } from "react-native-gesture-handler";
-import { MaterialIcons } from "@expo/vector-icons";
-import renderSpace from "./renderSpace";
+import RenderSpace from "./RenderSpace";
 import ModalContainer from "./ModalContainer";
-
-const spaceData = [
-    {
-        id: "거실",
-        name: "거실",
-    },
-    {
-        id: "주방",
-        name: "주방",
-    },
-    {
-        id: "욕실1",
-        name: "욕실1",
-    },
-    {
-        id: "욕실2",
-        name: "욕실2",
-    },
-    {
-        id: "침실1",
-        name: "침실1",
-    },
-    {
-        id: "침실2",
-        name: "침실2",
-    },
-    {
-        id: "침실3",
-        name: "침실3",
-    },
-    {
-        id: "펜트리",
-        name: "펜트리",
-    },
-    {
-        id: "실외기실",
-        name: "실외기실",
-    },
-];
 
 export default function AddProject2({ navigation }: any) {
     const [showModal, setShowModal] = useState<boolean>(false);
@@ -63,7 +23,6 @@ export default function AddProject2({ navigation }: any) {
             id: spaceName,
             name: spaceName
         }
-
         setSpaces(prevList => [...prevList, space]);
         setShowModal(false);
     }
@@ -83,14 +42,14 @@ export default function AddProject2({ navigation }: any) {
                             <TouchableOpacity
                                 onPress={() => setShowModal(true)}
                             >
-                                <Text>+ 공간추가하기</Text>
+                                <Text style={styles.buttonAddSpace}>+ 공간 추가하기</Text>
                             </TouchableOpacity>
                         </View>
                     }
                     data={spaces}
-                    renderItem={renderSpace}
+                    renderItem={({item}) => <RenderSpace item={item} navigation={navigation}/>}
                     keyExtractor={(space) => space.id}
-                    numColumns={4}
+                    numColumns={3}
                     columnWrapperStyle={styles.row}
                 />
             </View>
@@ -119,8 +78,6 @@ export default function AddProject2({ navigation }: any) {
         </View>
     );
 }
-
-
 
 const styles = StyleSheet.create({
     row: {
@@ -196,5 +153,10 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         fontSize: 18
+    },
+    buttonAddSpace: {
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 15
     }
 });
