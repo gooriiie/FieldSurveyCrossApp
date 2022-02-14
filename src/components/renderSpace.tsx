@@ -2,11 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet, Image, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function renderSpace({ item }: any) {
+export default function renderSpace({ item, navigation }: any) {
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                onPress={() => console.log(item.name)}
+                onPress={() => console.log(item.id)}
             >
                 <View style={styles.outerView}>
                     <Image

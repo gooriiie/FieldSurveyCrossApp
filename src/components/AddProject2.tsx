@@ -54,11 +54,13 @@ export default function AddProject2({ navigation }: any) {
     const [spaces, setSpaces] = useState<TypeSpace[]>([]);
 
     type TypeSpace = {
+        id: string;
         name: string;
     };
 
     const createSpace = () => {
         const space = {
+            id: spaceName,
             name: spaceName
         }
 
@@ -87,7 +89,7 @@ export default function AddProject2({ navigation }: any) {
                     }
                     data={spaces}
                     renderItem={renderSpace}
-                    keyExtractor={(space) => space.name}
+                    keyExtractor={(space) => space.id}
                     numColumns={4}
                     columnWrapperStyle={styles.row}
                 />
