@@ -1,10 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
 
 
-export default function RenderSpace({ item, navigation }: any) {
+export default function RenderSpace({ navigation, item }: any) {
     return (
         <View style={styles.container}>
             <TouchableOpacity
