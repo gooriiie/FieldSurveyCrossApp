@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView, SectionList } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { scrollTo } from "react-native-reanimated";
 
 export default function AddProject3({ navigation }: any) {
     const [switch1, setSwitch1] = useState(0);
@@ -226,8 +225,6 @@ export default function AddProject3({ navigation }: any) {
         },
     ];
 
-    const sectionlist = useRef();
-
     return (
         <View style={styles.container}>
             <View style={styles.titleArea}>
@@ -266,6 +263,7 @@ export default function AddProject3({ navigation }: any) {
             </View>
             <View style={styles.scrollArea}>
                 <SectionList
+                    style={styles.sectionList}
                     sections={sectionDatas}
                     renderSectionHeader={({ section }) => {
                         return (
@@ -312,17 +310,20 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#ffffff",
-        paddingLeft: 30,
-        paddingRight: 30,
+       
     },
     titleArea: {
         flex: 1,
         justifyContent: "center",
         marginTop: "10%",
+        paddingLeft: 30,
+        paddingRight: 30,
     },
     subtitleArea: {
         flex: 0.5,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingLeft: 30,
+        paddingRight: 30,
     },
     title: {
         fontSize: 30,
@@ -336,10 +337,10 @@ const styles = StyleSheet.create({
     moveButtonArea: {
         flex: 1,
         flexDirection: "row",
-        // borderBottomColor: "black",
-        // borderWidth: 2,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingLeft: 30,
+        paddingRight: 30,
     },
     movetext: {
         color: "black",
@@ -366,6 +367,11 @@ const styles = StyleSheet.create({
     },
     scrollArea: {
         flex: 7,
+        paddingLeft: 15,
+        paddingRight: 15
+    },
+    sectionList: {
+        width: '100%',
     },
     sectionHeader: {
         padding: 4,
@@ -390,7 +396,3 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
 });
-function scrollToLocation(): void {
-    throw new Error("Function not implemented.");
-}
-

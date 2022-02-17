@@ -61,6 +61,7 @@ export default function AddProject2({ navigation }: any) {
                     <TextInput
                         style={styles.modalInput}
                         placeholder="예) 침실1"
+                        placeholderTextColor="#bababa"
                         onChangeText={(spaceName) => setSpaceName(spaceName)}
                     />
                     <View style={styles.modalButtonArea}>
