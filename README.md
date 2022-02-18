@@ -36,5 +36,5 @@
 <br>
 
 ## Prerequisites
-> 1.
-> 2.
+> 1. npm install
+> 2. npm start
